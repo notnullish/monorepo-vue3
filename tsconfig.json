@@ -1,0 +1,30 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    "outDir": "dist", // 指定编译输入的目录
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "ESNext", // 指定模块代码生成规范
+    "moduleResolution": "node", // 指定模块解析策略
+    "target": "ESNext", // 指定 ECMAScript 目标版本
+    // For node js:
+    "lib": ["ESNext", "DOM"], // 指定要使用的库文件
+    "types": ["node"],
+    "baseUrl": "./", // 配合 PATHS 找到 @vue下的包
+    "paths": {
+      "@vue/*": ["packages/*/src"]
+    },
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    "strict": false, // 关闭严格模式
+    "resolveJsonModule": true // 允许导入 JSON 文件
+  }
+}
