@@ -56,7 +56,7 @@ const entry = resolve(__dirname, `../packages/${target}/src/index.ts`)
  */
 const outfile = resolve(
   __dirname,
-  `../packages/${target}/dist/index.${format}.js`,
+  `../packages/${target}/dist/${target}.${format}.js`,
 )
 const pkg = require(`../packages/${target}/package.json`)
 

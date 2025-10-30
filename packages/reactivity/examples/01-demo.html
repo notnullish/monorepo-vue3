@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ref 和 Effect的实现运用</title>
+</head>
+<body>
+<script type="module">
+    import { ref, effect } from '../dist/reactivity.esm.js'
+
+    const count = ref(0)
+    // 多个 effect 引入链表（现状只会执行最后一个effectv）
+    effect(() => {
+        console.log("count.value1 => ", count.value)
+    })
+
+    effect(() => {
+        console.log("count.value2 => ", count.value)
+    })
+
+    setTimeout(() => {
+        count.value = 1
+    }, 1000)
+
+</script>
+</body>
+</html>
